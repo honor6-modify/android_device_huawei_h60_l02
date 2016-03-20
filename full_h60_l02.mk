@@ -23,10 +23,17 @@
 #
 
 # Inherit from those products. Most specific first.
+LOCAL_PATH := device/huawei/h60_l02
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Inherit from h60-l02 device
-$(call inherit-product, device/huawei/h60_l02/h60_l02.mk)
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_h60_l02

@@ -1,1 +1,1 @@
-add_lunch_combo cm_h60_l02-eng
+add_lunch_combo omni_h60_l02-eng
