@@ -1,6 +1,5 @@
-# Make keys in CWM repeatable
-ro.cwm.enable_key_repeat=true
-
+ro.secure=0
+persist.sys.usb.config=mtp,adb
 # THIS NEEDS TO BE CLEANED UP
 ro.config.mmu_en=1
 debug.hwc_dump_en=1

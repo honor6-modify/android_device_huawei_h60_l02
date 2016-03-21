@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,22 +14,42 @@
 # limitations under the License.
 #
 
-
-
 LOCAL_PATH := device/huawei/h60_l02
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/huawei/h60_l02/overlay
+
+# Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
-PRODUCT_COPY_FILES += \
-    device/huawei/h60_l02/recovery/kernel:kernel
-PRODUCT_COPY_FILES += device/huawei/h60_l02/twrp.fstab:recovery/root/etc/twrp.fstab
-# Inherit some common Omni stuff.
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+# Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
+
+#PRODUCT_PACKAGES += \
+#    charger_res_images \
+#    charger
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/kernel:kernel
+
+#PRODUCT_COPY_FILES := \
+#    $(LOCAL_PATH)/recovery/root/fstab.hi3630:root/fstab.hi3630 \
+#    $(LOCAL_PATH)/recovery/root/init.recovery.hi3630.rc:root/init.recovery.hi3630.rc \
+#    $(LOCAL_PATH)/recovery/root/init.hi3630.usb.rc:root/init.hi3630.usb.rc \
+#    $(LOCAL_PATH)/recovery/root/ueventd.hi3630.rc:root/ueventd.hi3630.rc
+
+# Recovery
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/recovery/recovery/root/init.recovery.hi3630.rc:root/init.recovery.hi3630.rc \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.secure=0
+
 PRODUCT_NAME := omni_h60_l02
-
-# RIL
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    persist.radio.multisim.config=dsda
-
-
+PRODUCT_DEVICE := h60_l02
+PRODUCT_BRAND := Huawei
+PRODUCT_MANUFACTURER := Huawei
+PRODUCT_MODEL := Honor 6
