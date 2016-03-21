@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 ro.secure=0
 persist.sys.usb.config=mtp,adb
-=======
-
->>>>>>> origin/android-6.0
 # THIS NEEDS TO BE CLEANED UP
 ro.config.mmu_en=1
 debug.hwc_dump_en=1
