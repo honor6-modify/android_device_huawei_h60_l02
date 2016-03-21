@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 LOCAL_PATH := device/huawei/h60_l02
 
+=======
+>>>>>>> origin/android-6.0
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := hi3630
 TARGET_NO_BOOTLOADER := true
@@ -64,8 +67,15 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # TWRP
 RECOVERY_VARIANT := twrp
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+<<<<<<< HEAD
 #BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+=======
+BOARD_HAS_NO_REAL_SDCARD := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+
+>>>>>>> origin/android-6.0
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -73,7 +83,11 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_RECOVERY_SWIPE := true
 TWHAVE_SELINUX := true
+
+TW_INCLUDE_CRYPTO := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+<<<<<<< HEAD
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TW_INPUT_BLACKLIST := "accelerometer"
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
@@ -85,3 +99,8 @@ TW_NO_EXFAT_FUSE := true
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
 
+=======
+#BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+TW_NO_EXFAT_FUSE := true
+TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
+>>>>>>> origin/android-6.0

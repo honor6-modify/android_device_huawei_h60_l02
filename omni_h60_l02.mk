@@ -17,8 +17,13 @@
 LOCAL_PATH := device/huawei/h60_l02
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/android-6.0
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
@@ -28,6 +33,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
+<<<<<<< HEAD
 #PRODUCT_PACKAGES += \
 #    charger_res_images \
 #    charger
@@ -47,6 +53,27 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.secure=0
+=======
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    charger
+
+PRODUCT_COPY_FILES += \
+    device/huawei/h60_l02/kernel:kernel
+
+PRODUCT_COPY_FILES := \
+    $(LOCAL_PATH)/recovery/root/fstab.hi3630:root/fstab.hi3630 \
+    $(LOCAL_PATH)/recovery/root/init.hi3630.rc:root/init.hi3630.rc \
+    $(LOCAL_PATH)/recovery/root/init.hi3630.usb.rc:root/init.hi3630.usb.rc \
+    $(LOCAL_PATH)/recovery/root/ueventd.hi3630.rc:root/ueventd.hi3630.rc
+
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/recovery/root/init.recovery.hi3630.rc:root/init.recovery.hi3630.rc \
+
+#PRODUCT_PROPERTY_OVERRIDES += \
+	ro.secure=1
+>>>>>>> origin/android-6.0
 
 PRODUCT_NAME := omni_h60_l02
 PRODUCT_DEVICE := h60_l02
